@@ -1,5 +1,6 @@
 import './App.css'
 import Counter from "./Components/Counter.tsx";
+import UpgradeButton from "./Components/UpgradeButton.tsx";
 import {useState} from "react";
 
 function App() {
@@ -12,7 +13,11 @@ function App() {
     }
 
     return <> <Counter upgradeLevel={upgradeLevel}/>
+        <UpgradeButton className={"btn btn-dark"} upgradeCost={10} disabled={true}
+                       name={"Faster Iron Plates"}></UpgradeButton>
         <button onClick={upgrade}>Upgrade</button>
+
+
     </>;
 }
 
