@@ -14,7 +14,7 @@ function App() {
 
     return <> <Counter upgradeLevel={upgradeLevel}/>
         <UpgradeButton className={"btn btn-dark"} upgradeCost={10} disabled={true}
-                       name={"Faster Iron Plates"}></UpgradeButton>
+                       name={"Ben Karimi cok deli seviyorummmmmm elifimiii"}></UpgradeButton>
         <button onClick={upgrade}>Upgrade</button>
 
 
