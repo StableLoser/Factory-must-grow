@@ -1,15 +1,15 @@
+import Button from "./Button.tsx";
+
 type props = {
-    className: string;
-    upgradeCost: number;
     name: string;
-    disabled: boolean;
+    upgradeCost: number;
+    onClick: () => void;
 
 }
 
-function UpgradeButton(props: props) {
+function UpgradeButton({name, upgradeCost, onClick}: props) {
 
-    return <button className={props.className} disabled={props.disabled}>{props.name} Upgrade
-        cost: {props.upgradeCost}</button>;
+    return <Button onClick={onClick}> {name} Upgrade Cost: {upgradeCost}</Button>;
 }
 
 export default UpgradeButton;

@@ -1,11 +1,8 @@
 import {useState} from "react";
-import IronPlate from "./IronPlate.tsx";
-
-function Counter({upgradeLevel}: { upgradeLevel: number }) {
 
 
+function Counter({name, speed, className}: { speed: number, className?: string, name: string }) {
     const [count, setCount] = useState(0);
-    const speed = upgradeLevel * 1000;
 
     function increment() {
         setCount(count + 1);
@@ -13,9 +10,9 @@ function Counter({upgradeLevel}: { upgradeLevel: number }) {
 
     setTimeout(increment, speed);
 
-    return <div className={"position-absolute top-0 start-50 translate-middle-x m-2 p-2"}>
-        <output>You have {count} </output>
-        <IronPlate/> ({1000 / speed}/s) </div>;
+    return <div className={className}>
+        <output>You have {count} {name}</output>
+    </div>;
 }
 
 export default Counter;

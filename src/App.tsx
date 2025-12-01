@@ -1,24 +1,21 @@
 import './App.css'
-import Counter from "./Components/Counter.tsx";
-import UpgradeButton from "./Components/UpgradeButton.tsx";
+import MoneyShower from "./Components/MoneyShower.tsx";
 import {useState} from "react";
+import Incremancer from "./Components/Incremancers.tsx";
+
 
 function App() {
-    const [upgradeLevel, setUpgradeLevel] = useState<number>(1)
+    const [money, setMoney] = useState<number>(0);
 
-    function upgrade() {
-        if (upgradeLevel > 0.1) {
-            setUpgradeLevel(Math.round((upgradeLevel - 0.1) * 100) / 100);
-        }
+
+    function collect() {
+        setMoney(money + 10);
     }
 
-    return <> <Counter upgradeLevel={upgradeLevel}/>
-        <UpgradeButton className={"btn btn-dark"} upgradeCost={10} disabled={true}
-                       name={"Ben Karimi cok deli seviyorummmmmm elifimiii"}></UpgradeButton>
-        <button onClick={upgrade}>Upgrade</button>
-
-
-    </>;
+    return <div className={"app"}>
+        <MoneyShower money={money}/>
+        <Incremancer collect={collect}/>
+    </div>;
 }
 
 export default App
