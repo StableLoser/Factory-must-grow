@@ -8,13 +8,18 @@ function App() {
     const [money, setMoney] = useState<number>(0);
 
 
-    function collect() {
-        setMoney(money + 10);
+    function collect(value: number) {
+        setMoney(money + value);
     }
 
-    return <div className={"app"}>
-        <MoneyShower money={money}/>
-        <Incremancer collect={collect}/>
+    return <div className={"container"}>
+
+
+        <MoneyShower className={"col money-shower text-center"} money={money}/>
+        <Incremancer onCollect={collect} name={"Iron Ore"}/>
+        <Incremancer onCollect={collect} name={"Iron Plate"}/>
+
+
     </div>;
 }
 

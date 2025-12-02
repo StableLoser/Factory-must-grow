@@ -1,7 +1,7 @@
-function MoneyShower({money}: { money: number }) {
-    
-    return <div>
-        <output>You have {money} Euro</output>
+function MoneyShower({money, className}: { money: number, className?: string }) {
+
+    return <div className={className}>
+        <output className={"m-2 p-2"}>You have {money} Euro</output>
     </div>;
 
 }

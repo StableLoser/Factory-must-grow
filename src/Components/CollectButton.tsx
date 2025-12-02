@@ -1,9 +1,9 @@
 import Button from "./Button.tsx";
 
 
-function CollectButton({onClick}: { onClick: () => void }) {
+function CollectButton({onClick, className}: { onClick: () => void, className?: string }) {
 
-    return <Button onClick={onClick}>Collect</Button>;
+    return <Button className={className} onClick={onClick}>Collect</Button>;
 }
 
 export default CollectButton;
